@@ -1,2 +1,2 @@
-# webpack-template
-This is a basic template for a webpack project. It includes config that will be needed in nearly all of my projects. I also included a minimal CSS reset that I like.
+# TOP Weather App
+Weather App from TOP https://www.theodinproject.com/lessons/node-path-javascript-weather-app. The goal is to practice asynchronous javascript and working with APIs.
