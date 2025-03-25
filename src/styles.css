@@ -8,4 +8,25 @@
 
 body{
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container{
+    background-color: rgb(191, 191, 191);
+    min-width: fit-content;
+    padding: 1rem;
+}
+
+.header-container{
+    display: flex;
+}
+
+.search-container{
+    display: flex;
+}
+
+.f-c-toggle-container{
+    display: flex;
 }
