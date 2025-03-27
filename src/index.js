@@ -13,6 +13,9 @@ const currentWeatherHumidity = document.querySelector('.humidity');
 const currentWeatherUVIndex = document.querySelector('.uv-index');
 const currentWeatherWind = document.querySelector('.wind');
 
+let metric = true;
+let currentLocation = 'Tokyo';
+
 async function callWeatherAPI(location, unit){
     location = 'tokyo';
     unit = 'metric';
