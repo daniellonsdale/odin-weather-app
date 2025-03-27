@@ -15,6 +15,7 @@ const currentWeatherWind = document.querySelector('.wind');
 
 let metric = true;
 let currentLocation = 'Tokyo';
+callWeatherAPI(currentLocation, 'metric');
 
 async function callWeatherAPI(location, unit){
     location = 'tokyo';
