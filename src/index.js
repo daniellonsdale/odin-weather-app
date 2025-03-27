@@ -34,7 +34,7 @@ function updateDOM(newWeatherObject){
     locationNameDiv.textContent = newWeatherObject.address;
     currentWeatherNumber.textContent = newWeatherObject.temp;
     fcDisplay.textContent  = newWeatherObject.unit;
-    currentWeatherIcon.src = `icons/${newWeatherObject.icon}`;
+    currentWeatherIcon.src = `./icons/${newWeatherObject.icon}`;
     currentWeatherText.textContent = newWeatherObject.conditions;
     currentWeatherDescription.textContent = newWeatherObject.description;
     currentWeatherFeelsLike.textContent = newWeatherObject.feelslike;
