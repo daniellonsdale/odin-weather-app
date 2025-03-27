@@ -1,5 +1,18 @@
 import "./styles.css";
 
+const locationSearchInput = document.querySelector('#location-search');
+const locationSearchButton = document.querySelector('#location-search-button');
+const locationNameDiv = document.querySelector('.location-name');
+const currentWeatherNumber = document.querySelector('.current-weather-number');
+const fcDisplay = document.querySelector('.f-c-display');
+const currentWeatherIcon = document.querySelector('.current-weather-icon');
+const currentWeatherText = document.querySelector('.current-weather-text');
+const currentWeatherDescription = document.querySelector('.current-weather-description');
+const currentWeatherFeelsLike = document.querySelector('.feels-like');
+const currentWeatherHumidity = document.querySelector('.humidity');
+const currentWeatherUVIndex = document.querySelector('.uv-index');
+const currentWeatherWind = document.querySelector('.wind');
+
 async function callWeatherAPI(location, unit){
     location = 'tokyo';
     unit = 'metric';
