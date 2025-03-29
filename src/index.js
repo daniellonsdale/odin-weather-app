@@ -1,4 +1,5 @@
 import "./styles.css";
+import images from './imageLoader.js';
 
 const locationSearchInput = document.querySelector('#location-search');
 const locationSearchButton = document.querySelector('#location-search-button');
@@ -40,7 +41,7 @@ function updateDOM(newWeatherObject){
     locationNameDiv.textContent = newWeatherObject.address;
     currentWeatherNumber.textContent = newWeatherObject.temp;
     fcDisplay.textContent  = newWeatherObject.unit;
-    currentWeatherIcon.src = `./icons/${newWeatherObject.icon}`;
+    currentWeatherIcon.src = images[newWeatherObject.icon];
     currentWeatherText.textContent = newWeatherObject.conditions;
     currentWeatherDescription.textContent = newWeatherObject.description;
     currentWeatherFeelsLike.textContent = newWeatherObject.feelslike;
