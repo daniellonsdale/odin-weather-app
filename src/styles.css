@@ -30,3 +30,7 @@ body{
 .f-c-toggle-container{
     display: flex;
 }
+
+.current-weather-text-container > span{
+    display: block;
+}
