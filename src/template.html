@@ -8,16 +8,18 @@
 <body>
     <div class="main-container">
         <div class="header-container">
-            <div class="f-c-toggle-container">
-                <input type="radio" name="f-c-toggle" id="f" value="f">
-                <label for="f">F</label>
-                <input type="radio" name="f-c-toggle" id="c" value="c">
-                <label for="c">C</label>
-            </div>
-            <div class="search-container">
-                <input type="text" name="location-search" id="location-search">
-                <button type="button" id="location-search-button">Search</button>
-            </div>
+            <form action="#" class="header-form">
+                <div class="f-c-toggle-container">
+                    <input type="radio" name="f-c-toggle" id="f" value="f">
+                    <label for="f">F</label>
+                    <input type="radio" name="f-c-toggle" id="c" value="c">
+                    <label for="c">C</label>
+                </div>
+                <div class="search-container">
+                    <input type="text" name="location-search" id="location-search" required>
+                    <button type="submit" id="location-search-button">Search</button>
+                </div>
+            </form>
         </div>
         <div class="content-container">
             <div class="location-name"></div>

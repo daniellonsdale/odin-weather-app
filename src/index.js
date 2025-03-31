@@ -3,6 +3,7 @@ import images from './imageLoader.js';
 
 const locationSearchInput = document.querySelector('#location-search');
 const locationSearchButton = document.querySelector('#location-search-button');
+const headerForm = document.querySelector('.header-form');
 const locationNameDiv = document.querySelector('.location-name');
 const currentWeatherNumber = document.querySelector('.current-weather-number');
 const fcDisplay = document.querySelector('.f-c-display');
@@ -14,13 +15,28 @@ const currentWeatherHumidity = document.querySelector('.humidity');
 const currentWeatherUVIndex = document.querySelector('.uv-index');
 const currentWeatherWind = document.querySelector('.wind');
 
-let metric = true;
+let currentUnit = 'metric';
 let currentLocation = 'Tokyo';
-callWeatherAPI(currentLocation, 'metric').then(updateDOM);
+callWeatherAPI(currentLocation, currentUnit).then(updateDOM);
+
+locationSearchButton.addEventListener('click', (e) => {
+    if(locationSearchInput.validity.valid){
+        if (document.querySelector('input[name="f-c-toggle"]:checked').value != null){
+            if(document.querySelector('input[name="f-c-toggle"]:checked').value === 'f'){
+                currentUnit = 'us';
+            }else{
+                currentUnit = 'metric';
+            }
+        }
+        callWeatherAPI(locationSearchInput.value, currentUnit).then(updateDOM);
+        headerForm.reset();
+        e.preventDefault();
+    }else{
+        e.preventDefault();
+    }
+});
 
 async function callWeatherAPI(location, unit){
-    location = 'tokyo';
-    unit = 'metric';
     try {
         let initCall = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=S7RTNY7YMKM6ZUE7HJ9DZK3B9&unitGroup=${unit}`, {mode: 'cors'});
         let callJson = await initCall.json();
