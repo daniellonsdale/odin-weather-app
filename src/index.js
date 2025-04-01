@@ -6,7 +6,7 @@ const locationSearchButton = document.querySelector('#location-search-button');
 const headerForm = document.querySelector('.header-form');
 const locationNameDiv = document.querySelector('.location-name');
 const currentWeatherNumber = document.querySelector('.current-weather-number');
-const fcDisplay = document.querySelector('.f-c-display');
+const fcDisplay = document.querySelectorAll('.f-c-display');
 const currentWeatherIcon = document.querySelector('.current-weather-icon');
 const currentWeatherText = document.querySelector('.current-weather-text');
 const currentWeatherDescription = document.querySelector('.current-weather-description');
@@ -56,7 +56,10 @@ async function callWeatherAPI(location, unit){
 function updateDOM(newWeatherObject){
     locationNameDiv.textContent = newWeatherObject.address;
     currentWeatherNumber.textContent = newWeatherObject.temp;
-    fcDisplay.textContent  = newWeatherObject.unit;
+    /* fcDisplay.textContent  = newWeatherObject.unit; */
+    fcDisplay.forEach((element) => {
+        element.textContent = newWeatherObject.unit;
+    });
     currentWeatherIcon.src = images[newWeatherObject.icon];
     currentWeatherText.textContent = newWeatherObject.conditions;
     currentWeatherDescription.textContent = newWeatherObject.description;
