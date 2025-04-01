@@ -6,6 +6,14 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'robotoregular';
+    src: url('./fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('./fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     min-height: 100vh;
     display: flex;
