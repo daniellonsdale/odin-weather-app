@@ -26,20 +26,83 @@ body{
     background-color: rgb(191, 191, 191);
     min-width: fit-content;
     padding: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .header-container{
     display: flex;
 }
 
+.header-container form{
+    flex: 1;
+    display: flex;
+    gap: 8px;
+    font-size: 1.25rem;
+}
+
+form input[type='radio']{ 
+    transform: scale(1.25); 
+}
+
+form input[type='radio']:hover{ 
+    cursor: pointer;
+}
+
 .search-container{
     display: flex;
+    flex-grow: 1;
+    gap: 4px;
+}
+
+.search-container input{
+    flex-grow: 1;
+}
+
+.search-container button{
+    padding: 0 .5rem;
+}
+
+.search-container button:hover{
+    cursor: pointer;
 }
 
 .f-c-toggle-container{
     display: flex;
+    gap: 2px;
+}
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location-name{
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.current-weather-number-container > *{
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 .current-weather-text-container > span{
     display: block;
+    text-align: center;
+    font-size: 1.125rem;
+}
+
+.current-weather-number-icon-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-weather-icon-container{
+    width: 75%;
+}
+
+.current-weather-details-container{
+    margin-top: 1rem;
 }
