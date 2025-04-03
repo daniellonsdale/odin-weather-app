@@ -20,19 +20,18 @@ let currentLocation = 'Tokyo';
 callWeatherAPI(currentLocation, currentUnit).then(updateDOM);
 
 locationSearchButton.addEventListener('click', (e) => {
-    if(locationSearchInput.validity.valid){
-        if (document.querySelector('input[name="f-c-toggle"]:checked').value != null){
-            if(document.querySelector('input[name="f-c-toggle"]:checked').value === 'f'){
-                currentUnit = 'us';
-            }else{
-                currentUnit = 'metric';
-            }
+    e.preventDefault();
+
+    if (locationSearchInput.validity.valid) {
+        const selectedUnit = document.querySelector('input[name="f-c-toggle"]:checked');
+        if (selectedUnit) {
+            currentUnit = selectedUnit.value === 'f' ? 'us' : 'metric';
+        } else {
+            currentUnit = 'metric';
         }
+
         callWeatherAPI(locationSearchInput.value, currentUnit).then(updateDOM);
         headerForm.reset();
-        e.preventDefault();
-    }else{
-        e.preventDefault();
     }
 });
 
